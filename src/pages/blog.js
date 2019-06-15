@@ -1,10 +1,11 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import Head from "../components/head"
-
 import styled from "styled-components"
+
+import "./sytles/blogStyles.css"
 
 import BlogPost from "../components/blogPost/blogPost"
 
@@ -32,20 +33,21 @@ const BlogTest = () => {
   const posts = data.allContentfulBlogPost.edges
   return (
     <Layout>
-      <Head title="test" />
+      <Head title="blog" />
       <h1>Blog</h1>
       <BlogList>
-        {posts.map(post => {
+        {posts.map(edge => {
           return (
-            <>
+            <Link to={`/blog/${edge.node.slug}`} className="post-style">
               <BlogPost
-                key={post.node.sluge}
-                title={post.node.title}
-                description={post.node.description}
-                publishedDate={post.node.publishedDate}
-                image={post.node.cardImage.fluid}
+                key={edge.node.slug}
+                slug={edge.node.slug}
+                title={edge.node.title}
+                description={edge.node.description}
+                publishedDate={edge.node.publishedDate}
+                image={edge.node.cardImage.fluid}
               />
-            </>
+            </Link>
           )
         })}
       </BlogList>
