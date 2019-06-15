@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
 import Head from '../components/head'
 
 import styled from 'styled-components'
 
-import BlogPost from '../components/blogPost'
+import BlogPost from '../components/blogPost/blogPost'
 
 
 const BlogTest = () => {
