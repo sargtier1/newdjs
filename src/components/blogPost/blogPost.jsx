@@ -1,63 +1,62 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import React from "react"
+import Img from "gatsby-image"
 
-import { makeStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
-import { getThemeProps } from '@material-ui/styles'
+import { makeStyles } from "@material-ui/core/styles"
+import Card from "@material-ui/core/Card"
+import CardActionArea from "@material-ui/core/CardActionArea"
+import CardContent from "@material-ui/core/CardContent"
+import CardMedia from "@material-ui/core/CardMedia"
+import Typography from "@material-ui/core/Typography"
+
+import styled from "styled-components"
 
 const useStyles = makeStyles({
   card: {
     maxWidth: 345,
-    margin: '1rem'
-  }
+    margin: "1rem",
+  },
 })
 
 const BlogPost = props => {
   const classes = useStyles()
-
   return (
-    <Card className={classes.card}>
+    <Card key={props.key} className={classes.card}>
       <CardActionArea>
         <CardMedia>
           <Img
             style={{
-              height: '100%',
-              width: '100%',
-              objectFit: 'cover',
-              overFlow: 'hidden',
-              borderBottomLeftRadius: '0.28571429rem',
-              borderTopLeftRadius: '0.28571429rem'
+              height: "140px",
+              objectFit: "cover",
+              overFlow: "hidden"
             }}
             fluid={props.image}
           />
         </CardMedia>
         <CardContent>
-          <Typography gutterBottom variant='h5' component='h2'>
-            Lizard
+          <Typography variant="h5" component="h2">
+            {props.title}
           </Typography>
-          <Typography variant='body2' color='textSecondary' component='p'>
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <Typography
+            gutterBottom
+            variant="caption"
+            color="primary"
+            component="p"
+          >
+            {props.publishedDate}
+          </Typography>
+          <Typography variant="caption" color="textSecondary" component="p">
+            {props.description}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size='small' color='primary'>
-          Share
-        </Button>
-        <Button size='small' color='primary'>
-          Learn More
-        </Button>
-      </CardActions>
     </Card>
   )
 }
+
+const CardBottom = styled.p`
+  color: darkgrey;
+  font-size: 0.75rem;
+  font-style: italic;
+`
 
 export default BlogPost
