@@ -33,5 +33,6 @@ const StyledHeader = styled.header`
   margin: 1rem 0 1rem 0;
   padding: 1rem;
   text-align: center;
+  backgroung-color: white;
 `
 export default Header
