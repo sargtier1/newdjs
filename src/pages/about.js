@@ -3,7 +3,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Img from 'gatsby-image'
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import Head from "../components/head"
 
 const AboutPage = () => {

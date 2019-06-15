@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import Head from "../components/head"
 
 import IndexTemplate from '../templates/index'

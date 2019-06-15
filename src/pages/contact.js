@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
 import Head from '../components/head'
 
 import contactStyles from './contact.module.scss'
@@ -14,6 +14,7 @@ class ContactPage extends React.Component {
       error: false
     }
   }
+  
   render() {
     return (
       <Layout>
