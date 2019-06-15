@@ -4,6 +4,8 @@ import Header from "../header/header"
 import Footer from "../footer/footer"
 
 import styled from "styled-components"
+
+import 'typeface-roboto';
 import "./layout.css"
 
 const Layout = props => {

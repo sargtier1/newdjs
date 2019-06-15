@@ -1,6 +1,9 @@
 /* Global Styles CSS */
 
 body {
-    background-color: whitesmoke
+  background-color: whitesmoke;
 }
 
+html {
+  font-family: "Roboto", sans-serif;
+}
