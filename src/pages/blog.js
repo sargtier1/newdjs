@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import Head from "../components/head"
@@ -8,6 +8,8 @@ import styled from "styled-components"
 import "./sytles/blogStyles.css"
 
 import BlogPost from "../components/blogPost/blogPost"
+
+import { Grid, GridList } from "@material-ui/core"
 
 const BlogTest = () => {
   const data = useStaticQuery(graphql`
@@ -36,9 +38,9 @@ const BlogTest = () => {
       <Head title="blog" />
       <h1>Blog</h1>
       <BlogList>
-        {posts.map(edge => {
-          return (
-            <Link to={`/blog/${edge.node.slug}`} className="post-style">
+        <GridList>
+          {posts.map(edge => {
+            return (
               <BlogPost
                 key={edge.node.slug}
                 slug={edge.node.slug}
@@ -47,9 +49,9 @@ const BlogTest = () => {
                 publishedDate={edge.node.publishedDate}
                 image={edge.node.cardImage.fluid}
               />
-            </Link>
-          )
-        })}
+            )
+          })}
+        </GridList>
       </BlogList>
     </Layout>
   )
@@ -59,9 +61,14 @@ const BlogList = styled.div`
   padding: 0;
   margin-bottom: 1rem;
   display: flex;
+  overflow: auto;
 
   @media only screen and (max-width: 600px) {
     display: inline-block;
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    justify-content: center;
   }
 `
 
