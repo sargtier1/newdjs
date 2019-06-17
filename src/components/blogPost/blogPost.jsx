@@ -8,8 +8,6 @@ import CardContent from "@material-ui/core/CardContent"
 import CardMedia from "@material-ui/core/CardMedia"
 import Typography from "@material-ui/core/Typography"
 
-import styled from "styled-components"
-
 const useStyles = makeStyles({
   card: {
     maxWidth: 345,
@@ -52,11 +50,5 @@ const BlogPost = props => {
     </Card>
   )
 }
-
-const CardBottom = styled.p`
-  color: darkgrey;
-  font-size: 0.75rem;
-  font-style: italic;
-`
 
 export default BlogPost
