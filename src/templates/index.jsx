@@ -1,10 +1,9 @@
-import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import Img from 'gatsby-image'
+import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+
+import Hero from "../components/hero/hero"
 
 const IndexTemplate = () => {
-  
   const data = useStaticQuery(graphql`
     query {
       contentfulLandingPage {
@@ -22,20 +21,16 @@ const IndexTemplate = () => {
     }
   `)
 
+  const hero = data.contentfulLandingPage 
+
   return (
-    <div>
-      <h1>{data.contentfulLandingPage.title}</h1>
-      <Img fluid={data.contentfulLandingPage.image.fluid}/>
-      <div>
-        {documentToReactComponents(
-          data.contentfulLandingPage.body.json
-        )}
-      </div>
-    </div>
+    <>
+      <Hero 
+        image={hero.image.fluid.src}
+        title={hero.title}
+      />
+    </>
   )
 }
 
 export default IndexTemplate
-
-
-
