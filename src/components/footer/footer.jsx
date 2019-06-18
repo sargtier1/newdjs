@@ -45,8 +45,11 @@ const Footer = () => {
 }
 
 const StyledFooter = styled.footer`
+  border-top-style: solid;
+  border-color: lightblue;
   margin-top: 3rem;
   text-align: center;
+  padding: 1rem;
 `
 
 const StyledList = styled.ul`

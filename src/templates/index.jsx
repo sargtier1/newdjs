@@ -1,9 +1,12 @@
 import React from "react"
 
+import Pic from "../components/pic/pic"
+
 const IndexTemplate = () => {
   return (
     <>
-      <h1>This is the landing page</h1>
+      <br />
+      <Pic />
       <p>Its here to give insight into the other pages.</p>
     </>
   )

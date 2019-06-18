@@ -13,12 +13,13 @@ import { Link } from "gatsby"
 const useStyles = makeStyles({
   card: {
     maxWidth: 345,
-    margin: "1rem",
+    margin: "1.5rem",
   },
   link: {
     textDecoration: "none",
     color: "black",
   },
+  
 })
 
 const BlogPost = props => {
