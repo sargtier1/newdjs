@@ -1,18 +1,23 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
-import Img from "gatsby-image"
-
 import Layout from "../components/layout/layout"
 import Head from "../components/head"
 
-import styled from "styled-components"
+import Hero from '../components/hero/hero'
 
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
     query {
       contentfulAboutPage {
         title
+        backgroundImage {
+          title
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+        text
         image {
           title
           fluid {
@@ -23,23 +28,17 @@ const AboutPage = () => {
     }
   `)
 
+  const hero = data.contentfulAboutPage
+
   return (
     <Layout>
       <Head title="About" />
-      <h1>{data.contentfulAboutPage.title}</h1>
-      <ImageContainer>
-        <Img fluid={data.contentfulAboutPage.image.fluid} />
-      </ImageContainer>
-      <p>
-        Want to work with me? <Link to="/contact">Reach out.</Link>
-      </p>
+      <Hero
+        image={hero.image.fluid.src}
+        title={hero.title}
+      />
     </Layout>
   )
 }
-
-const ImageContainer = styled.div`
-  position: fixed;
-  width: 750px
-`
 
 export default AboutPage
