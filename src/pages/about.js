@@ -40,6 +40,7 @@ const AboutPage = () => {
       />
       <br/>
       <Panel/>
+    
     </Layout>
   )
 }
