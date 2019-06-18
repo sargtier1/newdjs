@@ -1,10 +1,11 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import Head from "../components/head"
 
 import Hero from '../components/hero/hero'
+import Panel from '../components/panels/panel'
 
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
@@ -37,6 +38,8 @@ const AboutPage = () => {
         image={hero.image.fluid.src}
         title={hero.title}
       />
+      <br/>
+      <Panel/>
     </Layout>
   )
 }
