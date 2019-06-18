@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
+import { Icon } from "semantic-ui-react"
+
 import styled from "styled-components"
 
 import "./footer.css"
@@ -29,8 +31,10 @@ const Footer = () => {
             return (
               <StyledListItem key={items.name}>
                 <a href={items.link} target="_blank" rel="noopener noreferrer">
-                  {" "}
-                  {items.name}{" "}
+                  <Icon
+                    name={items.name}
+                    size="big"
+                  />
                 </a>
               </StyledListItem>
             )
@@ -56,7 +60,6 @@ const StyledListItem = styled.li`
   margin: 1rem 2rem;
   padding: 0;
   vertical-align: middle;
-
 `
 
 export default Footer

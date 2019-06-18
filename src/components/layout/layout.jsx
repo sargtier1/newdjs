@@ -20,7 +20,7 @@ const Layout = props => {
 
 const StyledContainer = styled.div`
   margin: 0 auto;
-  max-width: 750px;
+  max-width: 800px;
   padding: 1rem;
 
   display: flex;
