@@ -15,13 +15,18 @@ const useStyles = makeStyles({
     maxWidth: 345,
     margin: "1rem",
   },
+  link: {
+    textDecoration: "none",
+    color: "black",
+  },
 })
 
 const BlogPost = props => {
   const classes = useStyles()
+
   return (
     <Card key={props.key} className={classes.card}>
-      <Link to={`/blog/${props.slug}`} className="post-style">
+      <Link to={`/blog/${props.slug}`} className={classes.link}>
         <CardActionArea>
           <CardMedia>
             <Img

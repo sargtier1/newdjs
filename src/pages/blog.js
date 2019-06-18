@@ -5,11 +5,9 @@ import Layout from "../components/layout/layout"
 import Head from "../components/head"
 import styled from "styled-components"
 
-import "./sytles/blogStyles.css"
-
 import BlogPost from "../components/blogPost/blogPost"
 
-import { Grid, GridList } from "@material-ui/core"
+import { GridList } from "@material-ui/core"
 
 const BlogTest = () => {
   const data = useStaticQuery(graphql`
