@@ -5,6 +5,8 @@ import Head from "../components/head"
 
 import IndexTemplate from '../templates/index'
 
+import 'semantic-ui-css/semantic.min.css'
+
 const IndexPage = () => {
   return (
     <Layout>
