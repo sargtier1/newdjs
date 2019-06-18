@@ -4,27 +4,19 @@ import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout/layout"
 import Head from "../components/head"
 
-import Hero from '../components/hero/hero'
-import Panel from '../components/panels/panel'
+import Panel from "../components/panels/panel"
 
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
     query {
       contentfulAboutPage {
         title
-        backgroundImage {
-          title
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-        text
-        image {
-          title
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
+        blurbTitle1
+        blurb1
+        blurbTitle2
+        blurb2
+        blurbTitle3
+        blurb3
       }
     }
   `)
@@ -34,13 +26,15 @@ const AboutPage = () => {
   return (
     <Layout>
       <Head title="About" />
-      <Hero
-        image={hero.image.fluid.src}
-        title={hero.title}
+      <br />
+      <Panel
+        title1={hero.blurbTitle1}
+        title2={hero.blurbTitle2}
+        title3={hero.blurbTitle3}
+        blurb1={hero.blurb1}
+        blurb2={hero.blurb2}
+        blurb3={hero.blurb3}
       />
-      <br/>
-      <Panel/>
-    
     </Layout>
   )
 }

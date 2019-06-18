@@ -59,7 +59,6 @@ const BlogList = styled.div`
   padding: 0;
   margin-bottom: 1rem;
   display: flex;
-  overflow: auto;
 
   @media only screen and (max-width: 600px) {
     display: inline-block;
