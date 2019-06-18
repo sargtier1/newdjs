@@ -7,7 +7,6 @@ const IndexTemplate = () => {
     <>
       <br />
       <Pic />
-      <p>Its here to give insight into the other pages.</p>
     </>
   )
 }

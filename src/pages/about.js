@@ -26,6 +26,7 @@ const AboutPage = () => {
   return (
     <Layout>
       <Head title="About" />
+      <h1>About</h1>
       <br />
       <Panel
         title1={hero.blurbTitle1}
