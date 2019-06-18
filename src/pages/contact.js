@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   button: {
     margin: theme.spacing(1),
     backgroundColor: "#ffe21f",
-    color: "#373737"
+    color: "#373737",
   },
 }))
 
@@ -69,7 +69,7 @@ const ContactPage = () => {
           multiline
           margin="normal"
         />
-        <Button variant="contained" className={classes.button}>
+        <input type="submit" className={classes.button}>
           Send
           <Icon
             style={{
@@ -80,7 +80,7 @@ const ContactPage = () => {
             name="paper plane"
             className={classes.rightIcon}
           />
-        </Button>
+        </input>
       </form>
     </Layout>
   )
