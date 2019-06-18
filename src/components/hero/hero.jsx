@@ -1,7 +1,5 @@
 import React from "react"
 
-import styled from "styled-components"
-
 const Hero = props => {
   return (
     <div>
@@ -31,7 +29,7 @@ const Hero = props => {
               margin: "auto",
             }}
           >
-            {props.title}
+            {props.heading}
           </h1>
         </div>
       </div>
